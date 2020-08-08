@@ -1,1 +1,8 @@
-print('Yasha')
+<?xml version="1.0" encoding="utf-8"?>
+    <root>
+            <Family>
+                <name = input()> </name>
+                <Age = int(input())> </Age>
+                <Sex = input()> </Sex>
+            </Family>
+    </root>
