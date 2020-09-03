@@ -711,7 +711,7 @@ def bot_answer(update, context):
 def main():
     """Start the bot."""
 
-    updater = Updater("1363686060:AAF-TgfWNVPAwJyuZnehnbdAwEaw1cY7Ht4", use_context=True)
+    updater = Updater("TOKEN", use_context=True)
 
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
