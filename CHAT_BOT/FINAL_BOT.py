@@ -626,18 +626,18 @@ clf = clf.fit(X, y)
 
 
 def get_intent(text):
-    # vector = vectorizer.transform([text])
-    # winner = clf.predict(vector)[0]
-    # index = list(clf.classes_).index(winner)
-    # proba = clf.predict_proba(vector)[0][index]
-    # if proba > 0.25:
-    #     return winner
-    # print(proba)
-    for intent_name, intent_data in BOT_CONFIG['intents'].items():
-        for example in intent_data['examples']:
-            distance = nltk.edit_distance(text.lower(), example.lower())
-            if distance / len(example) < 0.4:
-                return intent_name
+    vector = vectorizer.transform([text])
+    winner = clf.predict(vector)[0]
+    index = list(clf.classes_).index(winner)
+    proba = clf.predict_proba(vector)[0][index]
+    if proba > 0.18:
+        return winner
+    print(proba)
+    # for intent_name, intent_data in BOT_CONFIG['intents'].items():
+    #     for example in intent_data['examples']:
+    #         distance = nltk.edit_distance(text.lower(), example.lower())
+    #         if distance / len(example) < 0.4:
+    #             return intent_name
 
 
 def get_response_by_intent(intent):
@@ -711,7 +711,7 @@ def bot_answer(update, context):
 def main():
     """Start the bot."""
 
-    updater = Updater("TOKEN", use_context=True)
+    updater = Updater("1363686060:AAF-TgfWNVPAwJyuZnehnbdAwEaw1cY7Ht4", use_context=True)
 
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))

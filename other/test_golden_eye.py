@@ -9,7 +9,7 @@ for row in rows:
 
 conn.close()
 
-from peewee import (SqliteDatabase, Model, IntegerField, DoubleField, DateTimeField, datetime as peewee_datetime)
+from peewee import (SqliteDatabase)
 
 db = SqliteDatabase('golden-eye.db')
 
@@ -26,7 +26,7 @@ db = SqliteDatabase('golden-eye.db')
 #     to_currency = IntegerField()
 #     rate = DoubleField()
 #     update = DateTimeField(default=peewee_datetime.datetime.now)
-import models
+from other import models
 
 models.XRate.create_table()
 models.XRate.create(from_currency=980, to_currency=840, rate=25)
